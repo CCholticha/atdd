@@ -1,0 +1,103 @@
+{
+	"info": {
+		"_postman_id": "fb90f4b7-d05e-4eb4-8e7e-64f5ea548209",
+		"name": "shopping_cart_success",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "API Search",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d5063e0b-a5d8-4cef-ae87-aaada8ce5c2a",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Product Total is 1\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.total).to.eql(1);",
+							"});",
+							"",
+							"pm.test(\"Product ID is 1\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.product[0].id).to.eql(1);",
+							"});",
+							"",
+							"pm.test(\"Product name is 43 Piece Dinner Set\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.product[0].product_name).to.eql(\"43 Piece Dinner Set\");",
+							"});",
+							"",
+							"pm.test(\"Product price is 10.00\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.product[0].product_price).to.eql(10.00);",
+							"});",
+							"",
+							"pm.test(\"Product image is /43-piece-dinner-set.png\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.product[0].product_image).to.eql(\"/43-piece-dinner-set.png\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/v1/product",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API Product Detail",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API Submit Order ",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API Confirm Payment",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot rpa="false" generated="20200217 12:27:18.432" generator="Robot 3.1.2 (Python 2.7.17 on win32)">
+<suite source="D:\Work shop\CH-1.robot" id="s1" name="CH-1">
+<test id="s1-t1" name="Frist Test Cases">
+<kw name="Plus Number">
+<arguments>
+<arg>1</arg>
+<arg>2</arg>
+</arguments>
+<assign>
+<var>${r}</var>
+</assign>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>${num1}+${num2}</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<msg timestamp="20200217 12:27:19.707" level="INFO">${result} = 3</msg>
+<status status="PASS" endtime="20200217 12:27:19.707" starttime="20200217 12:27:19.707"></status>
+</kw>
+<msg timestamp="20200217 12:27:19.707" level="INFO">${r} = 3</msg>
+<status status="PASS" endtime="20200217 12:27:19.708" starttime="20200217 12:27:19.707"></status>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<arguments>
+<arg>${r}</arg>
+<arg>${expected_result}</arg>
+</arguments>
+<status status="PASS" endtime="20200217 12:27:19.708" starttime="20200217 12:27:19.708"></status>
+</kw>
+<status status="PASS" endtime="20200217 12:27:19.709" critical="yes" starttime="20200217 12:27:19.706"></status>
+</test>
+<test id="s1-t2" name="Second Test Cases">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>http:://www.google.co.th</arg>
+<arg>Chrome</arg>
+</arguments>
+<msg timestamp="20200217 12:27:19.711" level="INFO">Opening browser 'Chrome' to base url 'http:://www.google.co.th'.</msg>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes screenshot of the current page and embeds it into log file.</doc>
+<msg timestamp="20200217 12:27:22.571" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-13.png"&gt;&lt;img src="selenium-screenshot-13.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20200217 12:27:22.571" starttime="20200217 12:27:22.240"></status>
+</kw>
+<msg timestamp="20200217 12:27:22.577" level="FAIL">WebDriverException: Message: invalid argument
+  (Session info: chrome=79.0.3945.130)
+  (Driver info: chromedriver=78.0.3904.105 (60e2d8774a8151efa6a00b1f358371b1e0e07ee2-refs/branch-heads/3904@{#877}),platform=Windows NT 10.0.17763 x86_64)
+</msg>
+<status status="FAIL" endtime="20200217 12:27:22.577" starttime="20200217 12:27:19.711"></status>
+</kw>
+<status status="FAIL" endtime="20200217 12:27:22.578" critical="yes" starttime="20200217 12:27:19.711">WebDriverException: Message: invalid argument
+  (Session info: chrome=79.0.3945.130)
+  (Driver info: chromedriver=78.0.3904.105 (60e2d8774a8151efa6a00b1f358371b1e0e07ee2-refs/branch-heads/3904@{#877}),platform=Windows NT 10.0.17763 x86_64)
+</status>
+</test>
+<status status="FAIL" endtime="20200217 12:27:22.580" starttime="20200217 12:27:18.432"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="1" pass="1">Critical Tests</stat>
+<stat fail="1" pass="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="1" id="s1" name="CH-1" pass="1">CH-1</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
